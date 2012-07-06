@@ -1,0 +1,32 @@
+<div class="email-message">
+  <div class="email-subject">
+    <%= mail['subject'] ? mail['subject'] : '<span class="removed">subject removed</span>' %>
+  </div>
+  <div class="email-date">
+    <%= mail['date'] ? pretty_date(mail['date']) : '<span class="removed">date removed</span>' %>
+  </div>
+  <div class="clearfix"></div>
+  <div class="email-from">
+    from: <%= has_addr(mail, 'from') ? print_name(mail['addresses']['from']) : '<span class="removed">address removed</span>' %>
+  </div>
+  <div class="email-to"> 
+    to: <%= has_addr(mail, 'to') ? print_names(mail['addresses']['to']) : '<span class="removed">address removed</span>' %> 
+  </div>
+  <% if (has_addr(mail, 'cc')) { %>
+    <div class="email-cc">
+      cc: <%= print_names(mail['addresses']['cc']) %>
+    </div>
+  <% } %>
+  <% if (has_addr(mail, 'bcc')) { %>
+    <div class="email-bcc">
+      bcc: <%= print_names(mail['addresses']['bcc']) %>
+    </div>
+  <% } %>
+  <div class="email-body">
+    <% if (mail['body']) { %>
+      <%= mail['body'] < 250 ? mail['body'] : mail['body'].substring(0, 250) + '...' %>
+    <% } else { %>
+      <%= '<span class="removed">body removed</span>' %>
+    <% } %>
+  </div>
+</div>

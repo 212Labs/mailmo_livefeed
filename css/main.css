@@ -1,0 +1,41 @@
+.email-body {
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.email-date {
+  float: right;
+}
+
+.email-message {
+  border-top: 1px solid #999;
+  padding: 10px 0;
+}
+
+.email-messages {
+  margin-top: 10px;
+}
+
+.email-from, .email-to, .email-cc, .email-bcc {
+  color: #777;
+  font-size: 13px;
+}
+
+.email-from a, .email-to a, .email-cc a, .email-bcc a {
+  color: #777;
+}
+
+.email-subject {
+  float: left;
+
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.email-subject a {
+  color: #222;
+}
+
+.removed {
+	color: #990033;
+}
